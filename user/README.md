@@ -13,17 +13,23 @@
 Content-Type: application/json
 ```
 
-`请求参数` :
-```
+`请求参数` : 参数类型 `body`
+| key        | value           | type  | desc | required | 
+|:----------:|:---------:|:-----:| :---------:| :------:|
+| username   | 展示      | String | 用户名 | true |
+| password   | password |   String | 密码 | true |
+| emai   | emai     |    String |  邮箱 | true |
+
+示例:
+```json
 {
-    "username": "",
-    "password": "",
-    "emai": ""
+    "username": "username",
+    "password": "password",
+    "emai": "emai@ss.com"
 }
 ```
-
 `响应数据` : 
-```
+```json
 {
     "code": "",
     "msg": "",
@@ -46,11 +52,17 @@ Content-Type: application/json
 Content-Type: application/json
 ```
 
-`请求参数` :
+`请求参数` : 参数类型 `body`
+| key        | value           | type  | desc | required | 
+|:----------:|:---------:|:-----:|  :---------:| :--------: |
+| username   | 展示      | String | 用户名 | true |
+| password   | password |   String | 密码 | true |
+
+示例:
 ```json
 {
-    "username": "",
-    "password": ""
+    "username": "展示",
+    "password": "password"
 }
 ```
 
@@ -78,9 +90,48 @@ Content-Type: application/json
 Authorization: Bearer  token
 ```
 
-`请求参数` 
+`请求参数` : 参数类型 `params`
+| key        | value           | type  | desc |  required|
+|:----------:|:---------:|:-----:|  :---------:|:----: |
+| page   | 1      | String | 第几页 |  true |
+
+示例：
 ```js
-page: 第几页  required
+/api/user/list/1
+```
+
+`响应数据` : 
+```json
+{
+    "code": "",
+    "msg": "",
+    "data": {
+        
+    }
+}
+```
+
+## 查询用户
+
+`接口描述` : `根据用户id查询用户信息 `
+
+`请求路径` :  `/api/user/info?id=123`
+
+`请求方法` :  `GET`
+
+`请求头`: 
+```
+Authorization: Bearer  token
+```
+
+`请求参数` : 参数类型 `query`
+| key        | value           | type  | desc |  required|
+|:----------:|:---------:|:-----:|  :---------:|:----: |
+| id   | 1      | Int | 用户id |  true |
+
+示例：
+```js
+/api/user/info?id=123
 ```
 
 `响应数据` : 
